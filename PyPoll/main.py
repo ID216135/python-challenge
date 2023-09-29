@@ -2,16 +2,16 @@
 import os
 import csv
 #Getting file path (Note: Must be run from main Python-Challenge folder, otherwise it will not find the file)
-csvpath =  os.path.join("PyPoll", "Resources", "election_data.csv")
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
+pollpath =  os.path.join("PyPoll", "Resources", "election_data.csv")
+with open(pollpath) as csvfile:
+    poll = csv.reader(csvfile, delimiter=',')
     #Declaring lists for later use
     voter = []
     county = []
     candidate = []
-    next(csvreader)
+    next(poll)
     #Placing data in lists
-    for row in csvreader:
+    for row in poll:
         voter.append(row[0])
         county.append(row[1])
         candidate.append(row[2])
