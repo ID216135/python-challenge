@@ -2,12 +2,12 @@
 import os
 import csv
 #Getting file path (Note: Must be run from main Python-Challenge folder, otherwise it will not find the file)
-csvpath =  os.path.join("PyBank", "Resources", "budget_data.csv")
+budgetpath =  os.path.join("PyBank", "Resources", "budget_data.csv")
 #Iterating on csv file
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
+with open(budgetpath) as csvfile:
+    budget = csv.reader(csvfile, delimiter=',')
     #Skipping the first row
-    next(csvreader)
+    next(budget)
     #Defining variables for later use in for loops
     maximum = 0
     minimum = 0
@@ -15,7 +15,7 @@ with open(csvpath) as csvfile:
     months = []
     change = []
     #Separating data into lists
-    for row in csvreader:
+    for row in budget:
         profit.append(int(row[1]))
         months.append(row[0])
     #Setting baseline for profit change loop
